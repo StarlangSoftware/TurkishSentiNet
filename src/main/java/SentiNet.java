@@ -9,8 +9,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SentiNet {
-    private HashMap<String, SentiSynSet> synSetList;
+    private HashMap<String, SentiSynSet> sentiSynSetList;
 
+    /**
+     * Constructor of Turkish SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
+     * sentiSynSet read, it adds it to the sentiSynSetList.
+     */
     public SentiNet(){
         Node rootNode, sentiSynSetNode, partNode;
         Document doc;
@@ -26,7 +30,7 @@ public class SentiNet {
         doc = parser.getDocument();
         rootNode = doc.getFirstChild();
         sentiSynSetNode = rootNode.getFirstChild();
-        synSetList = new HashMap<>();
+        sentiSynSetList = new HashMap<>();
         while (sentiSynSetNode != null){
             partNode = sentiSynSetNode.getFirstChild();
             while (partNode != null){
@@ -44,7 +48,7 @@ public class SentiNet {
                 partNode = partNode.getNextSibling();
             }
             if (!id.isEmpty()){
-                synSetList.put(id, new SentiSynSet(id, positiveScore, negativeScore));
+                sentiSynSetList.put(id, new SentiSynSet(id, positiveScore, negativeScore));
             }
             sentiSynSetNode = sentiSynSetNode.getNextSibling();
             id = "";
@@ -53,13 +57,24 @@ public class SentiNet {
         }
     }
 
+    /**
+     * Accessor for a single SentiSynSet.
+     * @param id Id of the searched SentiSynSet.
+     * @return SentiSynSet with the given id.
+     */
     public SentiSynSet getSentiSynSet(String id){
-        return synSetList.get(id);
+        return sentiSynSetList.get(id);
     }
 
+    /**
+     * Constructs and returns an {@link ArrayList} of ids, which are the ids of the {@link SentiSynSet}s having polarity
+     * polarityType.
+     * @param polarityType PolarityTypes of the searched {@link SentiSynSet}s
+     * @return An {@link ArrayList} of id having polarityType polarityType.
+     */
     private ArrayList<String> getPolarity(PolarityType polarityType){
         ArrayList<String> result = new ArrayList<>();
-        for (SentiSynSet sentiSynSet : synSetList.values()){
+        for (SentiSynSet sentiSynSet : sentiSynSetList.values()){
             if (sentiSynSet.getPolarity().equals(polarityType)){
                 result.add(sentiSynSet.getId());
             }
@@ -67,14 +82,26 @@ public class SentiNet {
         return result;
     }
 
+    /**
+     * Returns the ids of all positive {@link SentiSynSet}s.
+     * @return An ArrayList of ids of all positive {@link SentiSynSet}s.
+     */
     public ArrayList<String> getPositives(){
         return getPolarity(PolarityType.POSITIVE);
     }
 
+    /**
+     * Returns the ids of all negative {@link SentiSynSet}s.
+     * @return An ArrayList of ids of all negative {@link SentiSynSet}s.
+     */
     public ArrayList<String> getNegatives(){
         return getPolarity(PolarityType.NEGATIVE);
     }
 
+    /**
+     * Returns the ids of all neutral {@link SentiSynSet}s.
+     * @return An ArrayList of ids of all neutral {@link SentiSynSet}s.
+     */
     public ArrayList<String> getNeutrals(){
         return getPolarity(PolarityType.NEUTRAL);
     }
