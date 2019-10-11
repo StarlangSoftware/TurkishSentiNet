@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 public class SentiSynSet {
     private String id;
     private double positiveScore;
@@ -46,6 +49,23 @@ public class SentiSynSet {
            } else {
                return PolarityType.NEUTRAL;
            }
+        }
+    }
+
+    /**
+     * Method to write SynSets to the specified file in the XML format.
+     *
+     * @param outfile BufferedWriter to write XML files
+     */
+    public void saveAsXml(BufferedWriter outfile) {
+        try {
+            outfile.write("<SYNSET>");
+            outfile.write("<ID>" + id + "</ID>");
+            outfile.write("<PSCORE>" + positiveScore + "</PSCORE>");
+            outfile.write("<NSCORE>" + negativeScore + "</NSCORE>");
+            outfile.write("</SYNSET>\n");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

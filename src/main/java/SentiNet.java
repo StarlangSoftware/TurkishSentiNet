@@ -4,7 +4,10 @@ import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -67,6 +70,24 @@ public class SentiNet {
     }
 
     /**
+     * Adds specified SentiSynSet to the SentiSynSet list.
+     *
+     * @param sentiSynSet SentiSynSet to be added
+     */
+    public void addSentiSynSet(SentiSynSet sentiSynSet) {
+        sentiSynSetList.put(sentiSynSet.getId(), sentiSynSet);
+    }
+
+    /**
+     * Removes specified SentiSynSet from the SentiSynSet list.
+     *
+     * @param sentiSynSet SentiSynSet to be removed
+     */
+    public void removeSynSet(SentiSynSet sentiSynSet) {
+        sentiSynSetList.remove(sentiSynSet.getId());
+    }
+
+    /**
      * Constructs and returns an {@link ArrayList} of ids, which are the ids of the {@link SentiSynSet}s having polarity
      * polarityType.
      * @param polarityType PolarityTypes of the searched {@link SentiSynSet}s
@@ -104,6 +125,27 @@ public class SentiNet {
      */
     public ArrayList<String> getNeutrals(){
         return getPolarity(PolarityType.NEUTRAL);
+    }
+
+    /**
+     * Method to write SynSets to the specified file in the XML format.
+     *
+     * @param fileName file name to write XML files
+     */
+    public void saveAsXml(String fileName) {
+        BufferedWriter outfile;
+        try {
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8");
+            outfile = new BufferedWriter(writer);
+            outfile.write("<SYNSETS>\n");
+            for (SentiSynSet synSet : sentiSynSetList.values()) {
+                synSet.saveAsXml(outfile);
+            }
+            outfile.write("</SYNSETS>\n");
+            outfile.close();
+        } catch (IOException ioException) {
+            System.out.println("Output file can not be opened");
+        }
     }
 
 }
