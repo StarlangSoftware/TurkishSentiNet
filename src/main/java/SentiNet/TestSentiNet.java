@@ -1,3 +1,5 @@
+package SentiNet;
+
 import java.util.ArrayList;
 
 public class TestSentiNet {

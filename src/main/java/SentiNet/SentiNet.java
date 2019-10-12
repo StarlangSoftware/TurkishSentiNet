@@ -1,3 +1,5 @@
+package SentiNet;
+
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -15,7 +17,7 @@ public class SentiNet {
     private HashMap<String, SentiSynSet> sentiSynSetList;
 
     /**
-     * Constructor of Turkish SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
+     * Constructor of Turkish SentiNet.SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
      * sentiSynSet read, it adds it to the sentiSynSetList.
      */
     public SentiNet(){
@@ -61,27 +63,27 @@ public class SentiNet {
     }
 
     /**
-     * Accessor for a single SentiSynSet.
-     * @param id Id of the searched SentiSynSet.
-     * @return SentiSynSet with the given id.
+     * Accessor for a single SentiNet.SentiSynSet.
+     * @param id Id of the searched SentiNet.SentiSynSet.
+     * @return SentiNet.SentiSynSet with the given id.
      */
     public SentiSynSet getSentiSynSet(String id){
         return sentiSynSetList.get(id);
     }
 
     /**
-     * Adds specified SentiSynSet to the SentiSynSet list.
+     * Adds specified SentiNet.SentiSynSet to the SentiNet.SentiSynSet list.
      *
-     * @param sentiSynSet SentiSynSet to be added
+     * @param sentiSynSet SentiNet.SentiSynSet to be added
      */
     public void addSentiSynSet(SentiSynSet sentiSynSet) {
         sentiSynSetList.put(sentiSynSet.getId(), sentiSynSet);
     }
 
     /**
-     * Removes specified SentiSynSet from the SentiSynSet list.
+     * Removes specified SentiNet.SentiSynSet from the SentiNet.SentiSynSet list.
      *
-     * @param sentiSynSet SentiSynSet to be removed
+     * @param sentiSynSet SentiNet.SentiSynSet to be removed
      */
     public void removeSynSet(SentiSynSet sentiSynSet) {
         sentiSynSetList.remove(sentiSynSet.getId());

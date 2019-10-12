@@ -1,3 +1,5 @@
+package SentiNet;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 
@@ -7,10 +9,10 @@ public class SentiSynSet {
     private double negativeScore;
 
     /**
-     * Constructor of SentiSynSet. Gets input id, positiveScore, negativeScore and sets all corresponding attributes.
-     * @param id Id of the SentiSynSet.
-     * @param positiveScore Positive score of the SentiSynSet.
-     * @param negativeScore Negative score of the SentiSynSet.
+     * Constructor of SentiNet.SentiSynSet. Gets input id, positiveScore, negativeScore and sets all corresponding attributes.
+     * @param id Id of the SentiNet.SentiSynSet.
+     * @param positiveScore Positive score of the SentiNet.SentiSynSet.
+     * @param negativeScore Negative score of the SentiNet.SentiSynSet.
      */
     public SentiSynSet(String id, double positiveScore, double negativeScore) {
         this.id = id;
@@ -20,7 +22,7 @@ public class SentiSynSet {
 
     /**
      * Accessor for the positiveScore attribute.
-     * @return PositiveScore of the SentiSynSet.
+     * @return PositiveScore of the SentiNet.SentiSynSet.
      */
     public double getPositiveScore() {
         return positiveScore;
@@ -28,7 +30,7 @@ public class SentiSynSet {
 
     /**
      * Accessor for the negativeScore attribute.
-     * @return NegativeScore of the SentiSynSet.
+     * @return NegativeScore of the SentiNet.SentiSynSet.
      */
     public double getNegativeScore() {
         return negativeScore;
@@ -38,7 +40,7 @@ public class SentiSynSet {
      * Returns the polarityType of the sentiSynSet. If the positive score is larger than the negative score, the polarity is
      * positive; if the negative score is larger than the positive score, the polarity is negative; if both positive
      * score and negative score are equal, the polarity is neutral.
-     * @return PolarityType of the sentiSynSet.
+     * @return SentiNet.PolarityType of the sentiSynSet.
      */
     public PolarityType getPolarity(){
         if (positiveScore > negativeScore){
@@ -71,7 +73,7 @@ public class SentiSynSet {
 
     /**
      * Accessor for the id attribute.
-     * @return Id of the SentiSynSet.
+     * @return Id of the SentiNet.SentiSynSet.
      */
     public String getId(){
         return id;

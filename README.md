@@ -35,9 +35,9 @@ Use Git for cloning the code to your local or below line for Ubuntu:
 
 	git clone <your-fork-git-link>
 
-A directory called SentiNet will be created. Or you can use below link for exploring the code:
+A directory called SentiNet.SentiNet will be created. Or you can use below link for exploring the code:
 
-	git clone https://github.com/olcaytaner/SentiNet.git
+	git clone https://github.com/olcaytaner/SentiNet.SentiNet.git
 
 ## Open project with IntelliJ IDEA
 
@@ -45,7 +45,7 @@ Steps for opening the cloned project:
 
 * Start IDE
 * Select **File | Open** from main menu
-* Choose `SentiNet/pom.xml` file
+* Choose `SentiNet.SentiNet/pom.xml` file
 * Select open as project option
 * Couple of seconds, dependencies with Maven will be downloaded. 
 
@@ -54,11 +54,11 @@ Steps for opening the cloned project:
 
 **From IDE**
 
-After being done with the downloading and Maven indexing, select **Build Project** option from **Build** menu. After compilation process, user can run SentiNet.
+After being done with the downloading and Maven indexing, select **Build Project** option from **Build** menu. After compilation process, user can run SentiNet.SentiNet.
 
 **From Console**
 
-Go to `SentiNet` directory and compile with 
+Go to `SentiNet.SentiNet` directory and compile with 
 
      mvn compile 
 
@@ -66,7 +66,7 @@ Go to `SentiNet` directory and compile with
 
 **From IDE**
 
-Use `package` of 'Lifecycle' from maven window on the right and from `SentiNet` root module.
+Use `package` of 'Lifecycle' from maven window on the right and from `SentiNet.SentiNet` root module.
 
 **From Console**
 
@@ -78,7 +78,7 @@ Use below line to generate jar file:
 
 ------------------------------------------------
 
-SentiNet
+SentiNet.SentiNet
 ============
 + [Maven Usage](#maven-usage)
 
@@ -86,7 +86,7 @@ SentiNet
 ### Maven Usage
 
     <groupId>NlpToolkit</groupId>
-    <artifactId>SentiNet</artifactId>
+    <artifactId>SentiNet.SentiNet</artifactId>
     <version>1.0.0</version>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

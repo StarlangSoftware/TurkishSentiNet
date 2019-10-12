@@ -1,3 +1,5 @@
+package SentiNet;
+
 /**
  * Enumerator class for three polarity types.
  */
