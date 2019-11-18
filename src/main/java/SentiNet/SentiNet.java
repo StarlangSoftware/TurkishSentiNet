@@ -16,19 +16,14 @@ import java.util.HashMap;
 public class SentiNet {
     private HashMap<String, SentiSynSet> sentiSynSetList;
 
-    /**
-     * Constructor of Turkish SentiNet.SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
-     * sentiSynSet read, it adds it to the sentiSynSetList.
-     */
-    public SentiNet(){
+    private void loadSentiNet(InputSource inputSource){
         Node rootNode, sentiSynSetNode, partNode;
         Document doc;
         String id = "";
         double positiveScore = 0.0, negativeScore = 0.0;
-        ClassLoader classLoader = getClass().getClassLoader();
         DOMParser parser = new DOMParser();
         try {
-            parser.parse(new InputSource(classLoader.getResourceAsStream("turkish_sentinet.xml")));
+            parser.parse(inputSource);
         } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
@@ -60,6 +55,20 @@ public class SentiNet {
             positiveScore = 0.0;
             negativeScore = 0.0;
         }
+    }
+
+    /**
+     * Constructor of Turkish SentiNet.SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
+     * sentiSynSet read, it adds it to the sentiSynSetList.
+     */
+    public SentiNet(){
+        ClassLoader classLoader = getClass().getClassLoader();
+        InputSource inputSource = new InputSource(classLoader.getResourceAsStream("turkish_sentinet.xml"));
+        loadSentiNet(inputSource);
+    }
+
+    public SentiNet(String fileName){
+        loadSentiNet(new InputSource(fileName));
     }
 
     /**
