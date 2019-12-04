@@ -74,3 +74,6 @@ target/classes/SentiNet/PolarityType.class
 target/classes/SentiNet/SentiNet.class
 target/classes/SentiNet/SentiSynSet.class
 target/classes/SentiNet/TestSentiNet.class
+target/SentiNet-1.0.3-javadoc.jar
+target/SentiNet-1.0.3-sources.jar
+target/SentiNet-1.0.3.jar
