@@ -14,8 +14,8 @@
 
     <distributionManagement>
         <repository>
-            <id>NlpToolkit</id>
-            <url>http://haydut.isikun.edu.tr:8081/artifactory/NlpToolkit</url>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/starlangsoftware/turkishsentinet</url>
         </repository>
     </distributionManagement>
 
