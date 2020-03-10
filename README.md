@@ -86,16 +86,8 @@ SentiNet.SentiNet
 
 ### Maven Usage
 
-    <groupId>NlpToolkit</groupId>
-    <artifactId>SentiNet.SentiNet</artifactId>
-    <version>1.0.0</version>
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-    <repositories>
-        <repository>
-            <id>NlpToolkit</id>
-            <url>http://haydut.isikun.edu.tr:8081/artifactory/NlpToolkit</url>
-        </repository>
-    </repositories>
+<dependency>
+  <groupId>NlpToolkit</groupId>
+  <artifactId>SentiNet</artifactId>
+  <version>1.0.3</version>
+</dependency>
