@@ -77,19 +77,47 @@ Use below line to generate jar file:
 
      mvn install
 
-
-
-------------------------------------------------
-
-SentiNet.SentiNet
-============
-+ [Maven Usage](#maven-usage)
-
-
-### Maven Usage
+## Maven Usage
 
 <dependency>
   <groupId>NlpToolkit</groupId>
   <artifactId>SentiNet</artifactId>
   <version>1.0.3</version>
 </dependency>
+
+
+------------------------------------------------
+
+Detailed Description
+============
++ [SentiNet](#sentinet)
++ [SentiSynSet](#sentisynset)
+
+## SentiNet
+
+Duygu sözlüğünü yüklemek için
+
+	a = SentiNet()
+
+Belirli bir alana ait duygu sözlüğünü yüklemek için
+
+	SentiNet(String fileName)
+	a = SentiNet("dosya.txt");
+
+Belirli bir synsete ait duygu synsetini elde etmek için
+
+	SentiSynSet getSentiSynSet(String id)
+
+## SentiSynSet
+
+Bir SentiSynset elimizdeyken onun pozitif skorunu
+
+	double getPositiveScore()
+
+negatif skorunu
+
+	double getNegativeScore()
+
+polaritysini
+
+	PolarityType getPolarity()
