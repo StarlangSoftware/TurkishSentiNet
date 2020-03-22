@@ -37,16 +37,17 @@ public class SentiNet {
         while (sentiSynSetNode != null){
             partNode = sentiSynSetNode.getFirstChild();
             while (partNode != null){
-                if (partNode.getNodeName().equals("ID")) {
-                    id = partNode.getFirstChild().getNodeValue();
-                } else {
-                    if (partNode.getNodeName().equals("PSCORE")){
+                switch (partNode.getNodeName()){
+                    case "ID":
+                        id = partNode.getFirstChild().getNodeValue();
+                        break;
+                    case "PSCORE":
                         positiveScore = Double.parseDouble(partNode.getFirstChild().getNodeValue());
-                    } else {
-                        if (partNode.getNodeName().equals("NSCORE")){
-                            negativeScore = Double.parseDouble(partNode.getFirstChild().getNodeValue());
-                        }
-                    }
+                        break;
+                    case "NSCORE":
+                        negativeScore = Double.parseDouble(partNode.getFirstChild().getNodeValue());
+                        break;
+
                 }
                 partNode = partNode.getNextSibling();
             }
