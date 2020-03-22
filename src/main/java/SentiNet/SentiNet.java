@@ -1,11 +1,13 @@
 package SentiNet;
 
-import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,16 +20,17 @@ public class SentiNet {
 
     private void loadSentiNet(InputSource inputSource){
         Node rootNode, sentiSynSetNode, partNode;
-        Document doc;
+        Document doc = null;
         String id = "";
         double positiveScore = 0.0, negativeScore = 0.0;
-        DOMParser parser = new DOMParser();
+        DocumentBuilder builder;
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
-            parser.parse(inputSource);
-        } catch (SAXException | IOException e) {
+            builder = factory.newDocumentBuilder();
+            doc = builder.parse(inputSource);
+        } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
-        doc = parser.getDocument();
         rootNode = doc.getFirstChild();
         sentiSynSetNode = rootNode.getFirstChild();
         sentiSynSetList = new HashMap<>();
