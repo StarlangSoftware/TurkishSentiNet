@@ -106,3 +106,7 @@ target/surefire-reports/TEST-SentiNet.SentiNetTest.xml
 target/surefire-reports/TEST-SentiNet.SentiSynSetTest.xml
 target/test-classes/SentiNet/SentiNetTest.class
 target/test-classes/SentiNet/SentiSynSetTest.class
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
