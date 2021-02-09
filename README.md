@@ -126,7 +126,7 @@ Duygu sözlüğünü yüklemek için
 Belirli bir alana ait duygu sözlüğünü yüklemek için
 
 	SentiNet(String fileName)
-	a = SentiNet("dosya.txt");
+	a = SentiNet("dosya.txt")
 
 Belirli bir synsete ait duygu synsetini elde etmek için
 
