@@ -60,8 +60,8 @@ public class SentiLiteralNet {
     }
 
     /**
-     * Constructor of Turkish SentiNet.SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
-     * sentiSynSet read, it adds it to the sentiSynSetList.
+     * Constructor of Turkish SentiNet.SentiNet. Reads the turkish_sentiliteralnet.xml file from the resources directory. For each
+     * sentiLiteral read, it adds it to the sentiLiteralList.
      */
     public SentiLiteralNet(){
         ClassLoader classLoader = getClass().getClassLoader();
@@ -83,10 +83,10 @@ public class SentiLiteralNet {
     }
 
     /**
-     * Constructs and returns an {@link ArrayList} of ids, which are the ids of the {@link SentiSynSet}s having polarity
+     * Constructs and returns an {@link ArrayList} of ids, which are the lemmas of the {@link SentiLiteral}s having polarity
      * polarityType.
-     * @param polarityType PolarityTypes of the searched {@link SentiSynSet}s
-     * @return An {@link ArrayList} of id having polarityType polarityType.
+     * @param polarityType PolarityTypes of the searched {@link SentiLiteral}s
+     * @return An {@link ArrayList} of lemma having polarityType polarityType.
      */
     private ArrayList<String> getPolarity(PolarityType polarityType){
         ArrayList<String> result = new ArrayList<>();
@@ -99,24 +99,24 @@ public class SentiLiteralNet {
     }
 
     /**
-     * Returns the ids of all positive {@link SentiSynSet}s.
-     * @return An ArrayList of ids of all positive {@link SentiSynSet}s.
+     * Returns the lemmas of all positive {@link SentiLiteral}s.
+     * @return An ArrayList of lemmas of all positive {@link SentiLiteral}s.
      */
     public ArrayList<String> getPositives(){
         return getPolarity(PolarityType.POSITIVE);
     }
 
     /**
-     * Returns the ids of all negative {@link SentiSynSet}s.
-     * @return An ArrayList of ids of all negative {@link SentiSynSet}s.
+     * Returns the lemmas of all negative {@link SentiLiteral}s.
+     * @return An ArrayList of lemmas of all negative {@link SentiLiteral}s.
      */
     public ArrayList<String> getNegatives(){
         return getPolarity(PolarityType.NEGATIVE);
     }
 
     /**
-     * Returns the ids of all neutral {@link SentiSynSet}s.
-     * @return An ArrayList of ids of all neutral {@link SentiSynSet}s.
+     * Returns the lemmas of all neutral {@link SentiLiteral}s.
+     * @return An ArrayList of lemmas of all neutral {@link SentiLiteral}s.
      */
     public ArrayList<String> getNeutrals(){
         return getPolarity(PolarityType.NEUTRAL);
