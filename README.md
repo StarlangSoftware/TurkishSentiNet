@@ -30,7 +30,7 @@ Subsequently, a second labeling was further made on positive and negative words 
 For Developers
 ============
 
-You can also see [Python](https://github.com/starlangsoftware/TurkishSentiNet-Py), [Cython](https://github.com/starlangsoftware/TurkishSentiNet-Cy), [C++](https://github.com/starlangsoftware/TurkishSentiNet-CPP), [Swift](https://github.com/starlangsoftware/TurkishSentiNet-Swift), or [C#](https://github.com/starlangsoftware/TurkishSentiNet-CS) repository.
+You can also see [Python](https://github.com/starlangsoftware/TurkishSentiNet-Py), [Cython](https://github.com/starlangsoftware/TurkishSentiNet-Cy), [C++](https://github.com/starlangsoftware/TurkishSentiNet-CPP), [Swift](https://github.com/starlangsoftware/TurkishSentiNet-Swift), [Js](https://github.com/starlangsoftware/TurkishSentiNet-Js), or [C#](https://github.com/starlangsoftware/TurkishSentiNet-CS) repository.
 
 ## Requirements
 
