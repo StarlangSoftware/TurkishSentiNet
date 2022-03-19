@@ -1,51 +1,34 @@
 package SentiNet;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import Xml.XmlDocument;
+import Xml.XmlElement;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SentiNet {
     private HashMap<String, SentiSynSet> sentiSynSetList;
 
-    private void loadSentiNet(InputSource inputSource){
-        Node rootNode, sentiSynSetNode, partNode;
-        Document doc = null;
+    private void loadSentiNet(XmlDocument xmlDocument){
         String id = "";
+        xmlDocument.parse();
         double positiveScore = 0.0, negativeScore = 0.0;
-        DocumentBuilder builder;
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        try {
-            builder = factory.newDocumentBuilder();
-            doc = builder.parse(inputSource);
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
-        }
-        rootNode = doc.getFirstChild();
-        sentiSynSetNode = rootNode.getFirstChild();
+        XmlElement rootNode = xmlDocument.getFirstChild();
+        XmlElement sentiSynSetNode = rootNode.getFirstChild();
         sentiSynSetList = new HashMap<>();
         while (sentiSynSetNode != null){
-            partNode = sentiSynSetNode.getFirstChild();
+            XmlElement partNode = sentiSynSetNode.getFirstChild();
             while (partNode != null){
-                switch (partNode.getNodeName()){
+                switch (partNode.getName()){
                     case "ID":
-                        id = partNode.getFirstChild().getNodeValue();
+                        id = partNode.getPcData();
                         break;
                     case "PSCORE":
-                        positiveScore = Double.parseDouble(partNode.getFirstChild().getNodeValue());
+                        positiveScore = Double.parseDouble(partNode.getPcData());
                         break;
                     case "NSCORE":
-                        negativeScore = Double.parseDouble(partNode.getFirstChild().getNodeValue());
+                        negativeScore = Double.parseDouble(partNode.getPcData());
                         break;
 
                 }
@@ -67,12 +50,12 @@ public class SentiNet {
      */
     public SentiNet(){
         ClassLoader classLoader = getClass().getClassLoader();
-        InputSource inputSource = new InputSource(classLoader.getResourceAsStream("turkish_sentinet.xml"));
-        loadSentiNet(inputSource);
+        InputStream inputStream = classLoader.getResourceAsStream("turkish_sentinet.xml");
+        loadSentiNet(new XmlDocument(inputStream));
     }
 
     public SentiNet(String fileName){
-        loadSentiNet(new InputSource(fileName));
+        loadSentiNet(new XmlDocument(fileName));
     }
 
     /**

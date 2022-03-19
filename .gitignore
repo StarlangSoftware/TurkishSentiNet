@@ -127,3 +127,12 @@ target/test-classes/SentiNet/SentiSynSetTest.class
 /target/apidocs/SentiNet/SentiLiteralNet.html
 /target/surefire-reports/SentiNet.SentiLiteralNetTest.txt
 /target/surefire-reports/TEST-SentiNet.SentiLiteralNetTest.xml
+/.idea/libraries/Maven__io_github_starlangsoftware_XmlParser_1_0_1.xml
+/target/SentiNet-1.0.8.jar
+/target/SentiNet-1.0.8.jar.asc
+/target/SentiNet-1.0.8.pom
+/target/SentiNet-1.0.8.pom.asc
+/target/SentiNet-1.0.8-javadoc.jar
+/target/SentiNet-1.0.8-javadoc.jar.asc
+/target/SentiNet-1.0.8-sources.jar
+/target/SentiNet-1.0.8-sources.jar.asc
