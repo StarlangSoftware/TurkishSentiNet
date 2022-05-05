@@ -27,6 +27,11 @@ Subsequently, a second labeling was further made on positive and negative words 
 |Negative|1,238|
 |Weakly negative|3,360|
 
+Video Lectures
+============
+
+[<img src=video1.jpg width="50%">](https://youtu.be/CdHSwgq2lTE)[<img src=video2.jpg width="50%">](https://youtu.be/_tbrvPlG87Y)
+
 For Developers
 ============
 
