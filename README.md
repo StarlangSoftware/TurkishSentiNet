@@ -30,7 +30,7 @@ Subsequently, a second labeling was further made on positive and negative words 
 Video Lectures
 ============
 
-[<img src=video1.jpg width="50%">](https://youtu.be/CdHSwgq2lTE)[<img src=video2.jpg width="50%">](https://youtu.be/_tbrvPlG87Y)
+[<img src=video1.jpg width="50%">](https://youtu.be/CdHSwgq2lTE)[<img src=video2.jpg width="50%">](https://youtu.be/_tbrvPlG87Y)[<img src=video3.jpg width="50%">](https://youtu.be/CUbNz34Ac5c)
 
 For Developers
 ============
