@@ -4,6 +4,7 @@ import Xml.XmlDocument;
 import Xml.XmlElement;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -133,7 +134,7 @@ public class SentiNet {
     public void saveAsXml(String fileName) {
         BufferedWriter outfile;
         try {
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8");
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8);
             outfile = new BufferedWriter(writer);
             outfile.write("<SYNSETS>\n");
             for (SentiSynSet synSet : sentiSynSetList.values()) {
