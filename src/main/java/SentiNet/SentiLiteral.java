@@ -2,9 +2,9 @@ package SentiNet;
 
 public class SentiLiteral {
 
-    private String name;
-    private double positiveScore;
-    private double negativeScore;
+    private final String name;
+    private final double positiveScore;
+    private final double negativeScore;
 
     /**
      * Constructor of SentiLiteral. Gets input literal, positiveScore, negativeScore and sets all corresponding attributes.
