@@ -14,7 +14,7 @@ public class SentiNet {
     private HashMap<String, SentiSynSet> sentiSynSetList;
 
     /**
-     * Reads the Xml file that contains all the information about sentiSynSets and their positive, negative scores.
+     * Reads the Xml file that contains names of sentiSynSets and their positive, negative scores.
      * @param xmlDocument Xml document that contains the SentiNet.
      */
     private void loadSentiNet(XmlDocument xmlDocument){

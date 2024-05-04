@@ -11,7 +11,7 @@ public class SentiLiteralNet {
     private HashMap<String, SentiLiteral> sentiLiteralList;
 
     /**
-     * Reads the Xml file that contains all the information about sentiLiterals and their positive, negative scores.
+     * Reads the Xml file that contains names of sentiLiterals and their positive, negative scores.
      * @param xmlDocument Xml document that contains the SentiLiteralNet.
      */
     private void loadSentiNet(XmlDocument xmlDocument){
