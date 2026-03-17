@@ -27,6 +27,10 @@ Subsequently, a second labeling was further made on positive and negative words 
 |Negative|1,238|
 |Weakly negative|3,360|
 
+Simple Web Interface For Sentiment Lexicon
+============
+[Link 1](http://104.247.163.162/nlptoolkit/turkish-sentinet.html) [Link 2](https://starlangsoftware.github.io/nlptoolkit-web-simple/turkish-sentinet.html)
+
 Video Lectures
 ============
 
